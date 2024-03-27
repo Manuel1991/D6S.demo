@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      enabled: true
+      server:
+        bootstrap: false
+        default-profile: "development"
+        git:
+          uri: "https://github.com/Manuel1991/D6-config-repo.git"
+          password: ""
+          username: ""
+          default-label: "master"
+          clone-on-start: true
+  security:
+    user:
+      name: "root"
+      password: "s3cr3t"

@@ -1,0 +1,19 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    username: "sa"
+    url: "jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE"
+  cloud:
+    config:
+      enabled: false
+  liquibase:
+    enabled: false
+keycloak:
+  server:
+    contextPath: "/auth"
+    adminUser:
+      username: "bael-admin"
+      password: "P@55word"
+    realmImportFile: "baeldung-realm.json"

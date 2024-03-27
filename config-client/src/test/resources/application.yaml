@@ -1,0 +1,28 @@
+server:
+  port: "8080"
+
+spring:
+  cloud:
+    config:
+      import-check:
+        enabled: false
+  application:
+    name: "configclient"
+    #config:
+    #import: "configserver:http://root:s3cr3t@localhost:8888"
+  profiles:
+    active:
+      - "development"
+  datasource:
+    driver-class-name: "org.sqlite.JDBC"
+    url: ${MUSIC_DB_URL}
+
+apis:
+  movies:
+    url: ${MOVIES_API_URL}
+    headers: "X-RapidAPI-Host:moviesminidatabase.p.rapidapi.com"
+  countries:
+    url: ${COUNTRIES_API_URL}
+
+user:
+  role: "developer"
